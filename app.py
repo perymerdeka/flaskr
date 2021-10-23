@@ -11,6 +11,7 @@ def index():
     else:
         return f"query yang dimasukan adalah {query}"
 
-@app.route('/profile/<username>')
+
+@app.route("/profile/<username>")
 def profile(username: str):
-    return render_template('profile.html', username=username)
+    return render_template("profile.html", username=username)
