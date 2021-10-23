@@ -9,4 +9,8 @@ def index():
     if not query:
         return render_template("index.html")
     else:
-        return f"query yang dimasukan adalah {query} Nomor Index {no_index}"
+        return f"query yang dimasukan adalah {query}"
+
+@app.route('/profile/<username>')
+def profile(username: str):
+    return render_template('profile.html', username=username)

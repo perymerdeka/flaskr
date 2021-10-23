@@ -1,16 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- tambah kan bulma css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='bulma.min.css') }}">
     <title>Document</title>
 </head>
+
 <body>
     {% if not query %}
-    <h2>Index Biasa</h2>
+    <section class="hero is-medium is-primary">
+        <div class="hero-body">
+            <p class="title">
+                Halaman Index Biasa
+            </p>
+            <!-- passing parameter misal seperti ini -->
+            <a href="{{ url_for('profile', username='fery') }}" class="button is-danger">Profile</a>
+        </div>
+    </section>
     {% else %}
-    <h2>Halaman Search</h2>
+    <section class="hero is-small is-link">
+        <div class="hero-body">
+            <p class="title">
+                Halaman Search
+            </p>
+            <!-- passing parameter misal seperti ini -->
+            <a href="{{ url_for('profile', username='fery') }}" class="button is-primary">Profile</a>
+        </div>
+    </section>
     {% endif %}
 </body>
+
 </html>
